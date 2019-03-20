@@ -3,13 +3,14 @@ Exam 1, problem 2.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Will Steuerwald.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
     """ Calls the   TEST   functions in this module. """
     test_factor_sum()
+
 
 
 def test_factor_sum():
@@ -44,7 +45,60 @@ def test_factor_sum():
     ###########################################################################
     # WRITE YOUR TESTS BELOW HERE:
     ###########################################################################
+    # Test 1
+    expected = 4
+    actual = factor_sum(3)
+    print()
+    print('Expected for factor_sum, Test 1:', expected, '(approximately)')
+    print('  Actual for factor_sum, Test 1:', actual)
+    if expected != actual:
+        print('Fail')
+    else:
+        print('pass')
 
+    # Test 2
+    expected = 22
+    actual = factor_sum(24)
+    print()
+    print('Expected for factor_sum, Test 2:', expected, '(approximately)')
+    print('  Actual for factor_sum, Test 2:', actual)
+    if expected != actual:
+        print('Fail')
+    else:
+        print('pass')
+
+    # Test 3
+    expected = 15
+    actual = factor_sum(15)
+    print()
+    print('Expected for factor_sum, Test 3:', expected, '(approximately)')
+    print('  Actual for factor_sum, Test 3:', actual)
+    if expected != actual:
+        print('Fail')
+    else:
+        print('pass')
+
+    # Test 4
+    expected = 21
+    actual = factor_sum(50)
+    print()
+    print('Expected for factor_sum, Test 4:', expected, '(approximately)')
+    print('  Actual for factor_sum, Test 4:', actual)
+    if expected != actual:
+        print('Fail')
+    else:
+        print('pass')
+
+    # Test 5
+    expected = 34
+    actual = factor_sum(75)
+    print()
+    print('Expected for factor_sum, Test 5:', expected, '(approximately)')
+    print('  Actual for factor_sum, Test 5:', actual)
+    if expected != actual:
+        print('Fail')
+    else:
+        print('pass')
 
 def factor_sum(n):
     """
@@ -78,3 +132,4 @@ def factor_sum(n):
     ###########################################################################
     # DO NOT modify the above line of code!
     ###########################################################################
+main()
