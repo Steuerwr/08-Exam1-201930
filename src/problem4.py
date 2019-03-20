@@ -96,7 +96,7 @@ def problem4(point1, point2, n, window):
         else:
             point.fill_color = point1.fill_color
     window.render()
-    
+
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # -----------------------------------------------------------------------------
