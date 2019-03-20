@@ -3,8 +3,8 @@ Exam 1, problem 4.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Will Steuerwald.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -53,6 +53,7 @@ def run_test_problem4():
 
 
 def problem4(point1, point2, n, window):
+
     """
     See   problem4_picture.pdf   in this project for pictures
     that may help you better understand the following specification:
@@ -80,12 +81,22 @@ def problem4(point1, point2, n, window):
       :type window:  rg.RoseWindow
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # Done: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # IMPORTANT: For PARTIAL CREDIT, ignore the colors.
     # -------------------------------------------------------------------------
 
-
+    point1.attach_to(window)
+    point2.attach_to(window)
+    for k in range(2*n+1):
+        point = rg.Point((point1.x - k*(point1.x-point2.x)/(2*n+1)), (point1.y - k*(point1.y-point2.y)/(2*n+1)))
+        point.attach_to(window)
+        if 0 < k <= n:
+            point.fill_color = point2.fill_color
+        else:
+            point.fill_color = point1.fill_color
+    window.render()
+    
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # -----------------------------------------------------------------------------
