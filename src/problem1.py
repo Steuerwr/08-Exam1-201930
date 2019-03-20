@@ -3,13 +3,13 @@ Exam 1, problem 1.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Will Steuerwald.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
 # -----------------------------------------------------------------------------
-# TODO: 2. Right-click on the  src  folder and
+# Done: 2. Right-click on the  src  folder and
 #              Mark Directory as ... Sources Root,
 #          if you have not already done so.
 # -----------------------------------------------------------------------------
@@ -118,10 +118,29 @@ def problem1(circle, rectangle, color, length, window):
       :type window:    rg.RoseWindow
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.  SEE THE PICTURES in the PDF!
+    # Done: 3. Implement and test this function.  SEE THE PICTURES in the PDF!
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
 
+    circle.attach_to(window)
+    window.render(.5)
+    rectangle.attach_to(window)
+    window.render(.5)
+    p1 = rg.Point(circle.center.x, circle.center.y)
+    p2 = rg.Point(rectangle.get_center().x, rectangle.get_center().y)
+    line1 = rg.Line(p1, p2)
+    line1.color = color
+    line1.thickness = circle.outline_thickness
+    line1.attach_to(window)
+    mid = line1.get_midpoint()
+    window.render(.5)
+    p3 = rg.Point(mid.x, mid.y+length/2)
+    p4 = rg.Point(mid.x, mid.y-length/2)
+    line2 = rg.Line(p3, p4)
+    line2.color = circle.fill_color
+    line2.thickness = (circle.outline_thickness + rectangle.outline_thickness)
+    line2.attach_to(window)
+    window.render()
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
