@@ -3,8 +3,8 @@ Exam 1, problem 3.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Will Steuerwald.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import testing_helper
 import time
@@ -13,11 +13,11 @@ import time
 def main():
     """ Calls the   TEST   functions in this module. """
     run_test_problem3a()
-    run_test_problem3b()
+    #run_test_problem3b()
 
 
 ###############################################################################
-# TODO: 2.  READ the doc-string for the  sum_of_digits  and   is_prime
+# Done: 2.  READ the doc-string for the  sum_of_digits  and   is_prime
 # functions defined below.  They are the same as what you have seen before.
 # After you UNDERSTAND the doc-string (JUST the doc-string, NOT the code),
 # ASKING QUESTIONS AS NEEDED, change the above _TODO_ to DONE.
@@ -170,6 +170,7 @@ def run_test_problem3a():
 
 
 def problem3a(a, b):
+
     """
     What comes in:  Positive integers a and b, with a >= 2.
     What goes out:
@@ -199,6 +200,12 @@ def problem3a(a, b):
     #    **  use (call) the appropriate function(s) that are DEFINED ABOVE.
     ###########################################################################
 
+    count = 0
+    for k in range(a, a**b):
+        if is_prime(k) is True:
+            if is_prime(sum_of_digits(k)) is True:
+                count = count + k
+    return count
 
 def run_test_problem3b():
     """ Tests the   problem3b   function. """
@@ -256,7 +263,7 @@ def run_test_problem3b():
     print_summary_of_test_results(test_results)
 
 
-def problem3b(m, x):
+#def problem3b(m, x):
     """
     What comes in:  A positive integer m >= 2, and an integer x.
     What goes out:
@@ -277,7 +284,7 @@ def problem3b(m, x):
            which is approximately 12.020144157845959.
      """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # Ignore: 4. Implement and test this function.
     #          Tests have been written for you (above).
     ###########################################################################
     ###########################################################################
